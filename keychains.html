@@ -1,0 +1,108 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>The Charmz Keychains</title><meta name="description" content="Beaded phone charms, keychains and bracelets. Order by DM on Instagram @_the_charmz_."><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght,SOFT@9..144,400..700,0..100&display=swap"><style>:root{color-scheme:light}
+/* Layout: soft pin-board. Sticky pill header, left-aligned page title, masonry of tinted photo cards, each with a direct DM button. */
+:root{
+  --bg:#F4F2FB; --surface:#FFFFFF; --ink:#352F4D; --muted:#6F688C; --line:#E2DEF2;
+  --accent:#6A5BCF; --on-accent:#FFFFFF; --blush:#F7D3E0; --sky:#CAD9F7; --mist:#E6E0F8;
+  --font-display:'Fraunces',Georgia,serif; --font-body:'Figtree',system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#1A1730; --surface:#262240; --ink:#F0ECFC; --muted:#B0A9CC; --line:#3A3560;
+  --accent:#B3A8FF; --on-accent:#1A1730; --blush:#4A3350; --sky:#2F3C66; --mist:#35305A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1A1730; --surface:#262240; --ink:#F0ECFC; --muted:#B0A9CC; --line:#3A3560;
+  --accent:#B3A8FF; --on-accent:#1A1730; --blush:#4A3350; --sky:#2F3C66; --mist:#35305A; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.55;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:12px}
+.wrap{max-width:1180px;margin-inline:auto;padding-inline:20px}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px)}
+header.top .wrap{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding-block:14px}
+.brand{font-family:var(--font-display);font-variation-settings:'SOFT' 100,'opsz' 72;font-weight:600;font-size:1.6rem;text-decoration:none;letter-spacing:-.01em;margin-right:auto}
+nav{display:flex;gap:6px;flex-wrap:wrap}
+nav a{padding:8px 16px;border-radius:999px;text-decoration:none;font-weight:500;color:var(--muted)}
+nav a:hover{background:var(--mist);color:var(--ink)}
+nav a[aria-current="page"]{background:var(--ink);color:var(--bg)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 20px;border-radius:999px;background:var(--accent);color:var(--on-accent);font-weight:600;text-decoration:none;border:0;cursor:pointer;font:inherit;font-weight:600}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--line)}
+.btn.ghost:hover{background:var(--mist)}
+.hero{padding-block:48px 28px}
+.hero h1{font-family:var(--font-display);font-variation-settings:'SOFT' 100,'opsz' 144;font-weight:500;font-size:clamp(2.6rem,7vw,5.2rem);line-height:1;letter-spacing:-.02em;margin:0 0 18px;max-width:14ch;text-wrap:balance}
+.hero p{max-width:52ch;color:var(--muted);font-size:1.1rem;margin:0 0 24px}
+.hero .row{display:flex;gap:12px;flex-wrap:wrap}
+.board{columns:3 300px;column-gap:20px;padding-block:12px 40px}
+.pin{break-inside:avoid;margin:0 0 20px;background:var(--tint);border-radius:28px;padding:12px 12px 18px}
+.pin img{display:block;width:100%;height:auto;border-radius:18px}
+.pin .meta{padding:14px 8px 0;display:flex;flex-direction:column;gap:6px}
+.pin h2{font-family:var(--font-display);font-variation-settings:'SOFT' 100,'opsz' 36;font-weight:600;font-size:1.35rem;margin:0}
+.pin p{margin:0;color:var(--muted);font-size:.95rem}
+.pin .buy{margin-top:8px;align-self:flex-start}
+.price{font-size:.9rem;color:var(--muted)}
+.t-blue{--tint:var(--sky)}.t-pink{--tint:var(--blush)}.t-lilac{--tint:var(--mist)}
+.t-mint{--tint:#D3EEDD}.t-black{--tint:#DAD7E6}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .t-mint{--tint:#2B4540}:root:not([data-theme="light"]) .t-black{--tint:#2E2B45}}
+:root[data-theme="dark"] .t-mint{--tint:#2B4540}:root[data-theme="dark"] .t-black{--tint:#2E2B45}
+.more{padding-block:20px 40px}
+.more h2,.order h2{font-family:var(--font-display);font-variation-settings:'SOFT' 100;font-weight:500;font-size:clamp(1.8rem,4vw,2.4rem);margin:0 0 20px;letter-spacing:-.01em}
+.more .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.more a{display:flex;gap:16px;align-items:center;text-decoration:none;background:var(--surface);border-radius:28px;padding:12px;min-width:0}
+.more a:hover{background:var(--mist)}
+.more img{width:110px;height:110px;object-fit:cover;border-radius:18px;flex:none}
+.more strong{font-family:var(--font-display);font-size:1.3rem;font-weight:600;display:block}
+.more span{color:var(--muted);font-size:.95rem}
+.order{padding-block:20px 56px}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;counter-reset:s}
+.steps li{counter-increment:s;background:var(--surface);border-radius:28px;padding:24px;min-width:0}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--blush);color:var(--ink);font-weight:700;margin-bottom:12px}
+.steps b{display:block;font-size:1.1rem;margin-bottom:4px}
+.steps span{color:var(--muted)}
+footer{border-top:1px solid var(--line);padding-block:28px 40px;color:var(--muted)}
+footer .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between;align-items:center}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;max-width:calc(100vw - 32px);text-align:center;z-index:10}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){.toast{transition:none}}
+</style></head><body><header class="top"><div class="wrap"><a class="brand" href="index.html">the charmz</a><nav aria-label="Shop"><a href="index.html">Phone charms</a><a href="keychains.html" aria-current="page">Keychains</a><a href="bracelets.html">Bracelets</a></nav>
+<a class="btn" href="https://ig.me/m/_the_charmz_" target="_blank" rel="noopener">Message us</a></div></header>
+<main class="wrap">
+<section class="hero"><h1>Keychains for bags, keys and zips.</h1><p>Gemstone-style beads and glass accents on a silver chain with a lobster clasp. Every piece has its own emoji mood.</p>
+<div class="row"><a class="btn" href="https://ig.me/m/_the_charmz_" target="_blank" rel="noopener">DM on Instagram</a><a class="btn ghost" href="https://www.instagram.com/_the_charmz_/" target="_blank" rel="noopener">See @_the_charmz_</a></div></section>
+<section class="board" aria-label="Keychains">
+<article class="pin t-mint"><img src="key-matcha.jpg" alt="Green beaded keychain with a glass cube and star, with apple and avocado emoji" loading="lazy">
+<div class="meta"><h2>Matcha Grove</h2><p>Pale green beads with a glass cube and a star charm.</p><span class="price">Price on request by DM</span>
+<a class="btn buy" href="https://ig.me/m/_the_charmz_" target="_blank" rel="noopener" data-item="Matcha Grove" data-kind="keychain">DM to buy</a></div></article>
+<article class="pin t-blue"><img src="key-sky.jpg" alt="Light blue beaded keychain with silver star and butterfly emoji" loading="lazy">
+<div class="meta"><h2>Butterfly Sky</h2><p>Aqua and clear beads with a silver star and a blue star bead.</p><span class="price">Price on request by DM</span>
+<a class="btn buy" href="https://ig.me/m/_the_charmz_" target="_blank" rel="noopener" data-item="Butterfly Sky" data-kind="keychain">DM to buy</a></div></article>
+<article class="pin t-pink"><img src="key-bloom.jpg" alt="Pink beaded keychain with silver star and bow, tulip emoji" loading="lazy">
+<div class="meta"><h2>Bow and Tulip</h2><p>Soft pink beads, a silver star and blush stone nuggets.</p><span class="price">Price on request by DM</span>
+<a class="btn buy" href="https://ig.me/m/_the_charmz_" target="_blank" rel="noopener" data-item="Bow and Tulip" data-kind="keychain">DM to buy</a></div></article>
+<article class="pin t-lilac"><img src="key-dusk.jpg" alt="Lilac beaded keychain with a red stone and star, unicorn and umbrella emoji" loading="lazy">
+<div class="meta"><h2>Unicorn Dusk</h2><p>Lilac beads with a deep red stone and a pink star.</p><span class="price">Price on request by DM</span>
+<a class="btn buy" href="https://ig.me/m/_the_charmz_" target="_blank" rel="noopener" data-item="Unicorn Dusk" data-kind="keychain">DM to buy</a></div></article>
+<article class="pin t-black"><img src="key-midnight.jpg" alt="Black and white beaded keychain with amber bead, 8-ball and music emoji" loading="lazy">
+<div class="meta"><h2>Midnight Club</h2><p>Black onyx-style beads with amber glass and a white star.</p><span class="price">Price on request by DM</span>
+<a class="btn buy" href="https://ig.me/m/_the_charmz_" target="_blank" rel="noopener" data-item="Midnight Club" data-kind="keychain">DM to buy</a></div></article>
+</section>
+<section class="more"><h2>Keep browsing</h2><div class="grid"><a href="index.html"><img src="charm-rose.jpg" alt=""><div><strong>Phone charms</strong><span>3 beaded styles</span></div></a><a href="bracelets.html"><img src="brace-quartz-b.jpg" alt=""><div><strong>Bracelets</strong><span>Rose stones and star chains</span></div></a></div></section>
+<section class="order"><h2>How to order</h2><ol class="steps">
+<li><b>Pick your favourite</b><span>Tap DM to buy on the piece you like. We copy a ready message for you.</span></li>
+<li><b>Send the DM</b><span>Paste it into our Instagram chat. We reply with price and availability.</span></li>
+<li><b>Confirm and pay</b><span>We agree payment and delivery with you in the same chat.</span></li>
+</ol></section>
+</main>
+<footer><div class="wrap"><span>the charmz</span><a href="https://www.instagram.com/_the_charmz_/" target="_blank" rel="noopener">Instagram: @_the_charmz_</a><span>Made by manal_verse.co</span></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+  var t=document.getElementById('toast'),timer;
+  function say(m){t.textContent=m;t.classList.add('show');clearTimeout(timer);timer=setTimeout(function(){t.classList.remove('show')},3800)}
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('a[data-item]'); if(!a) return;
+    var msg="Hi! I'd like to buy the "+a.dataset.item+" ("+a.dataset.kind+"). Is it available?";
+    var ok=function(){say('Message copied. Paste it in the Instagram DM.')};
+    var fail=function(){say('Instagram is opening. Tell us you want the '+a.dataset.item+'.')};
+    try{navigator.clipboard.writeText(msg).then(ok,fail)}catch(err){fail()}
+  });
+})();
+</script></body></html>
